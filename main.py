@@ -33,7 +33,7 @@ class RPCServiceServicer(addressbook_pb2_grpc.RPCServiceServicer):
         if person is None:
             return addressbook_pb2.Person()
         else:
-            print("size: "+str(sys.getsizeof(person.SerializeToString())))
+            print("protobuf size: "+str(sys.getsizeof(person.SerializeToString())))
             return person
 
     def EditPeople(self, request_iterator, context):
